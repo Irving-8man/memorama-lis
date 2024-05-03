@@ -11,7 +11,7 @@
 function generateXLS($table) {
 
     header('Content-Type: application/force-download');
-    header('Content-Disposition: attachment; filename="Reporte.xls"');
+    header('Content-Disposition: attachment; filename="Reporte.xlsx"');
     header('Content-Transfer-Encoding: binary');
     print $table;
 

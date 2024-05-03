@@ -29,6 +29,8 @@ class ParejasManager {
         return self::$_instance;
     }
 
+    
+
     public function getPareja($idMateria, $id) {
         $query = "SELECT concepto,descripcion, FROM parejas WHERE id='$id' AND idmateria= '$idMateria'";
 
@@ -68,7 +70,9 @@ class ParejasManager {
         }
         return "";
     }
-
+   
+    # 
+    
     public function deletePareja($id, $idMateria) {
         $query = "DELETE FROM parejas WHERE id='$id' AND idmateria='$idMateria'";
 
@@ -78,7 +82,6 @@ class ParejasManager {
             return $resultado;
         }
 
-        return "";
     }
 
     public function getAllParejasTheMateria($idMateria) {

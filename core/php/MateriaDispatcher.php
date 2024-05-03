@@ -8,5 +8,4 @@
 include_once("MateriasManager.php");
 
 $materiaManager = MateriasManager::getInstance();
-
 echo $materiaManager->getAllMateria();

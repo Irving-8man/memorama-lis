@@ -8,15 +8,21 @@
  */
 include "DataBaseManager.php";
 require_once("Session.php");
+require_once("LoginHelper.php");
 
 $username = $_POST["username"];
 $password = $_POST["password"];
 
-
+$lh = new LoginHelper();
 $database = DataBaseManager::getInstance();
-$query = "Select * FROM  usuario WHERE nombre = '$username' AND clave = '$password'";
-$result = $database->realizeQuery($query);
-verifyLogin($result, $username);
+$lh->setDb($database);
+$lh->setSesion(new session());
+$lh->verifyLogin($username, $password);
+
+
+//$query = "Select * FROM  usuario WHERE nombre = '$username' AND clave = '$password'";
+//$result = $database->realizeQuery($query);
+//verifyLogin($result, $username);
 
 function verifyLogin($result, $username) {
     $message = null;
@@ -37,4 +43,3 @@ function verifyLogin($result, $username) {
         echo json_encode($message);
     }
 }
-

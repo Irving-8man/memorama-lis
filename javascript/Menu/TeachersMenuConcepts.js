@@ -82,6 +82,9 @@ function addMattersToList(response) {
 
 }
 
+/**
+ * Función a la que se vio afectada a mantenimiento  Fx-1-29042024-I
+ */
 
 function showTableConcepts(response){
     try {
